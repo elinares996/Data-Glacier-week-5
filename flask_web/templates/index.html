@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <title>Flight Prediction</title>
+  </head>
+  <body>
+    <div>
+      <p class="firstText">
+        "used to predict flight stay and length of model however this is just a
+        practice model to understand functionality of flask and pickle not
+        accurate"
+      </p>
+    </div>
+    <div>
+      <form action="/" method="post">
+        <input
+          type="number"
+          name="num passengers"
+          placeholder="num passengers"
+        />
+        <input type="number" name="purchase lead" placeholder="purchase lead" />
+        <input
+          type="number"
+          name="length of stay"
+          placeholder="Length of Stay"
+        />
+        <input type="number" name="flight hour" placeholder="flight hour" />
+        <input
+          type="number"
+          name="wants preffered seat"
+          placeholder="wants preffered seat"
+        />
+        <input
+          type="number"
+          name="wants in flight meals"
+          placeholder="wants in flight meals"
+        />
+        <input
+          type="number"
+          name="booking complete"
+          placeholder="booking complete"
+        />
+        <button type="submit">Predict</button>
+      </form>
+
+      {% if prediction %}
+      <p>Predicted Flight Stay and Length: {{ prediction }} days</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
